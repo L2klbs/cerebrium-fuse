@@ -1,0 +1,11 @@
+# Ignore the SSD cache directory
+ssd/*
+
+# Ignore metadata file
+cache_metadata.json
+
+# Optional: Ignore Go build cache, test results, etc.
+*.out
+*.test
+__pycache__/
+*.log

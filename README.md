@@ -17,6 +17,9 @@ This project implements a FUSE-based read-only filesystem that mirrors files fro
 
 ## Setup
 
+**⚠️ macOS Note:**  
+FUSE is not natively supported on macOS in a compatible way with this project. If you're using macOS, please use the Docker-based setup described below instead. This ensures full compatibility with FUSE in a Linux environment.
+
 ### Linux
 
 ```bash

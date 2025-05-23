@@ -70,6 +70,7 @@ cat ~/projects/cerebrium-fuse/cache_metadata.json
 * When you run `go run ./add.go`, the content will be served from SSD cache — much faster.
 * The caching behavior is logged in the terminal, showing whether the file was read from NFS or SSD.
 * You can inspect the `./ssd` directory to see cached files, and the `cache_metadata.json` file tracks cache entries and timestamps.
+* Timestamps are used to detect file changes. If a file in NFS has been modified since it was last cached, a new content hash is generated and a fresh cache entry is created.
 
 ### LRU Demonstration
 To quickly populate your cache and see LRU eviction in action:

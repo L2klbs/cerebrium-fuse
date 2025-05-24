@@ -94,7 +94,7 @@ docker build -t cerebriumfs .
 # Run the application in one terminal
 docker run --rm -it --cap-add SYS_ADMIN --device /dev/fuse --name cerebriumfs cerebriumfs
 
-# Exec into running running container and run your test
+# In a seperate terminal, exec into running container and run your test
 docker exec -it cerebriumfs bash
 
 # add add.go to cache

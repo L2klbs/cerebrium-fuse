@@ -29,6 +29,7 @@ sudo apt install fuse3 -y
 
 # Install Go 1.24.3
 # You can do a direct install with a tool like brew or use a package version manager like asdf
+# Make sure to add go to your PATH environment variable after install
 brew install go@1.24.3
 
 # clone project to a project directory
@@ -132,10 +133,18 @@ Key components:
 * CI/CD pipeline caching: Cache common files across build steps to speed up test runs.
 
 ### Future Improvements
-Some areas for future work and improvement include:
+Feature and Performance Enhancements:
 * Supporting a byte-based cache size limit (e.g., 100 KB)
 * Adding time-to-live (TTL) expiration for rarely accessed files
 * Tracking usage metrics or exposing observability endpoints
     * Utilize metrics to adjust eviction policies based on frequency
 * Smart pre-fetching and caching of files (e.g. cache page 4 of a book when a user is reading page 3)
 * Support multi-user environments by tracking and preserving file UID/GID/mode, allowing shared cache access with proper permissions
+
+Infrastructure and Observability Improvements:
+* Add CI/CD pipelines
+    * automated linters, tests, and image builds that push to a container registry
+    * automated deployment and e2e testing
+* Observability
+    * Instrument the service using OpenTelemetry, and export telemetry data (metrics, logs, and traces) via the OpenTelemetry Collector to their respective backends
+    * Use telemetry insights to trigger event-driven behaviors, such as intelligent cache expiration, and continuously improve system performance and user experience.
